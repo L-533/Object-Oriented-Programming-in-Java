@@ -1,8 +1,24 @@
-public class Book {
+public class Book implements Cloneable {
     private String title;
     private String author;
     private float price;
 
+    public Book() {
+        this.title = null;
+        this.author = null;
+    }
+
+    public Book(String title, String author, float price) {
+        this.title = title;
+        this.author = author;
+        this.price = price;
+    }
+
+    // Overriding the clone() method
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
     public void setTitle(String title) {
         this.title = title;
     }
